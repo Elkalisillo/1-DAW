@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 3 - Mapa de imagen</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Mapa de imagen interactivo</h1>
+
+  <div class="ejemplo">
+    <p>
+      La imagen contiene tres zonas seleccionables.
+      Cada zona tiene una forma y unas coordenadas propias.
+      Al hacer clic en una de ellas, el navegador salta
+      a la sección correspondiente.
+    </p>
+
+    <img src="mapa-zonas.svg"
+         alt="Mapa con una zona rectangular, una circular y una poligonal"
+         usemap="#mapa-zonas">
+
+    <map name="mapa-zonas">
+
+      <area shape="rect"
+            coords="35,70,280,255"
+            href="#zona-rectangular"
+            alt="Zona rectangular">
+
+      <area shape="circle"
+            coords="450,185,105"
+            href="#zona-circular"
+            alt="Zona circular">
+
+      <area shape="poly"
+            coords="635,75,815,85,865,180,785,265,645,220,610,135"
+            href="#zona-poligonal"
+            alt="Zona poligonal">
+
+    </map>
+  </div>
+
+  <pre>&lt;img src="mapa-zonas.svg" usemap="#mapa-zonas"&gt;
+
+&lt;map name="mapa-zonas"&gt;
+  &lt;area shape="rect" coords="35,70,280,255" ...&gt;
+  &lt;area shape="circle" coords="450,185,105" ...&gt;
+  &lt;area shape="poly" coords="635,75,815,85,865,180,785,265,645,220,610,135" ...&gt;
+&lt;/map&gt;
+
+usemap relaciona la imagen con el mapa cuyo name coincide.
+shape indica la forma de la zona seleccionable.
+coords contiene las coordenadas de la zona en la imagen.
+href indica el destino al seleccionar la zona.
+alt proporciona un texto alternativo para la zona.</pre>
+
+  <div class="ejemplo">
+    <h2 id="zona-rectangular">Zona rectangular</h2>
+    <p>Destino de la zona definida con shape="rect".</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2 id="zona-circular">Zona circular</h2>
+    <p>Destino de la zona definida con shape="circle".</p>
+  </div>
+
+  <div class="ejemplo">
+    <h2 id="zona-poligonal">Zona poligonal</h2>
+    <p>Destino de la zona definida con shape="poly".</p>
+  </div>
+
+</body>
+
+</html>

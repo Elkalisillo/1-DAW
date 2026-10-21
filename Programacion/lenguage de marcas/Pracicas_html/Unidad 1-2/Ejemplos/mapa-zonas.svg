@@ -1,0 +1,40 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
+
+  <rect width="900" height="320" fill="#ffffff" stroke="#777777" stroke-width="2"></rect>
+
+  <text x="24" y="40" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#925612">
+    MAPA DE IMAGEN: tres zonas seleccionables
+  </text>
+
+  <!-- Zona rectangular -->
+  <rect x="35" y="70" width="245" height="185" fill="#f5e9ce" stroke="#925612" stroke-width="4"></rect>
+
+  <text x="70" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#925612">
+    ZONA 1
+  </text>
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="14" fill="#925612">
+    Rectángulo
+  </text>
+
+  <!-- Zona circular -->
+  <circle cx="450" cy="185" r="105" fill="#e8b35f" stroke="#925612" stroke-width="4"></circle>
+
+  <text x="403" y="170" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#925612">
+    ZONA 2
+  </text>
+  <text x="397" y="200" font-family="Arial, sans-serif" font-size="14" fill="#925612">
+    Círculo
+  </text>
+
+  <!-- Zona poligonal -->
+  <polygon points="635,75 815,85 865,180 785,265 645,220 610,135" fill="#f5e9ce" stroke="#925612" stroke-width="4"></polygon>
+
+  <text x="685" y="160" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#925612">
+    ZONA 3
+  </text>
+  <text x="682" y="190" font-family="Arial, sans-serif" font-size="14" fill="#925612">
+    Polígono
+  </text>
+
+</svg>

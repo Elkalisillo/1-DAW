@@ -1,0 +1,13 @@
+#resultado {
+    width: 260px;
+    height: 260px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    background-color: #a384ff;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}

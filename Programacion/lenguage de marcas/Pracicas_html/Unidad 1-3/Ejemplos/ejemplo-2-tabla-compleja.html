@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 2 - Combinación de filas y columnas</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    /* ESTILOS ESPECÍFICOS DEL EJEMPLO */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #e8b35f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Ejemplo 2: Combinación de filas y columnas</h1>
+
+  <pre>
+En una tabla HTML, el atributo colspan permite que una celda
+ocupe varias columnas.
+
+El atributo rowspan permite que una celda ocupe varias filas.
+
+En este ejemplo, la celda "Finales" ocupa dos columnas y la celda
+"Jornada de mañana" ocupa dos filas.
+  </pre>
+
+  <div class="ejemplo">
+
+    <table>
+      <caption>Calendario del torneo de desarrollo web</caption>
+
+      <thead>
+        <tr>
+          <th rowspan="2">Jornada</th>
+          <th colspan="2">Mañana</th>
+          <th colspan="2">Tarde</th>
+        </tr>
+        <tr>
+          <th>Hora</th>
+          <th>Actividad</th>
+          <th>Hora</th>
+          <th>Actividad</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th rowspan="2">Día 1</th>
+          <td>09:00</td>
+          <td>Prueba HTML</td>
+          <td>16:00</td>
+          <td>Prueba CSS</td>
+        </tr>
+        <tr>
+          <td>11:00</td>
+          <td>Prueba de tablas</td>
+          <td>18:00</td>
+          <td>Prueba de listas</td>
+        </tr>
+        <tr>
+          <th>Día 2</th>
+          <td colspan="4">Finales</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <pre>
+Observa las combinaciones de la tabla:
+
+- "Jornada" utiliza rowspan="2": ocupa las dos filas de cabecera.
+- "Mañana" y "Tarde" utilizan colspan="2": cada una ocupa dos columnas.
+- "Día 1" utiliza rowspan="2": ocupa las dos filas correspondientes
+  a las actividades de ese día.
+- "Finales" utiliza colspan="4": ocupa las cuatro columnas de datos.
+
+Cuando una celda se combina, las celdas que ocuparía no se escriben
+de nuevo en esa fila o columna. El navegador distribuye el espacio
+según los valores de colspan y rowspan.
+  </pre>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="140" font-family="Times New Roman" font-size="16">
+  <rect width="220" height="140" fill="white"/>
+  <ellipse cx="110" cy="70" rx="95" ry="55" fill="#3e6fa8" stroke="#24476e" stroke-width="3"/>
+  <line x1="110" y1="70" x2="205" y2="70" stroke="black"/>
+  <line x1="110" y1="70" x2="110" y2="15" stroke="black"/>
+  <text x="155" y="64">a</text>
+  <text x="115" y="45">b</text>
+</svg>

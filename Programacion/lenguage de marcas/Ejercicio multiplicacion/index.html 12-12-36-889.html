@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function multiplicar() {
+            let resultado = 0;
+            let numero1 = parseFloat(document.getElementById("numero1").value);
+            resultado = numero1 * 2;
+            document.getElementById("resultado").innerText = resultado;
+        }
+
+        let objetoPersona =[
+        {
+            nombre: "Juan",
+            edad: 30,
+            ciudad: "Madrid"
+        },
+        {
+            nombre: "María",
+            edad: 25,
+            ciudad: "Barcelona"
+        },
+        {
+            nombre: "Pedro",
+            edad: 35,
+            ciudad: "Valencia"
+        }
+        ]
+
+        for (let i = 0; i <objetoPersona.length; i++) {
+            console.log("Nombre: " + objetoPersona[i].nombre);
+            console.log("Edad: " + objetoPersona[i].edad);
+            console.log("Ciudad: " + objetoPersona[i].ciudad);
+            console.log("-------------------");
+        }
+
+    </script>
+    <p>
+        <input type="number" id="numero1" placeholder="Ingrese el primer número" value="0">
+        <button onclick="multiplicar()">Multiplicar x 2</button>
+        <div id="resultado">0</div>
+    </p>
+</body>
+</html>

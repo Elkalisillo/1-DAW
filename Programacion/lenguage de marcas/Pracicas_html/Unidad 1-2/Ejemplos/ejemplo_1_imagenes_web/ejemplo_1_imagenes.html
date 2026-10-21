@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 1 - Imágenes y atributos básicos</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    h2 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Imágenes en una página web</h1>
+
+  <pre>En este ejemplo veremos cómo se utiliza &lt;img&gt; para mostrar imágenes y cómo sus atributos permiten indicar el archivo, proporcionar información alternativa y controlar su tamaño de presentación.
+
+Las imágenes se encuentran en la carpeta "imagenes", por lo que usamos rutas relativas en el atributo src.</pre>
+
+  <div class="ejemplo">
+    <h2>1. Una imagen con src, alt y title</h2>
+
+    <img
+      width="450"
+      src="imagenes/paisaje.jpg"
+      alt="Paisaje con montañas y un cielo claro"
+      title="Imagen de un paisaje">
+
+    <pre>src → indica qué archivo de imagen debe mostrar el navegador.
+alt → proporciona un texto alternativo para la imagen.
+title → añade información adicional que el navegador puede mostrar al situar el cursor sobre la imagen.</pre>
+  </div>
+
+  <div class="ejemplo">
+    <h2>2. El tamaño de presentación</h2>
+
+    <img
+      width="450"
+      src="imagenes/paisaje.jpg"
+      alt="Paisaje con montañas, mostrado con sus proporciones normales">
+
+    <img
+      width="450"
+      height="150"
+      src="imagenes/paisaje.jpg"
+      alt="El mismo paisaje mostrado con una proporción diferente"
+      title="La imagen se ha mostrado con una proporción diferente">
+
+    <pre>width y height permiten determinar el tamaño con el que se muestra la imagen en la página.
+
+La segunda imagen utiliza una combinación de anchura y altura diferente de sus proporciones originales. Por eso aparece deformada.
+
+Estos atributos cambian el tamaño de presentación de la imagen; no modifican el archivo original.</pre>
+  </div>
+
+  <div class="ejemplo">
+    <h2>3. Diferentes formatos de imagen</h2>
+
+    <p>PNG:</p>
+    <img
+      width="210"
+      src="imagenes/logo.png"
+      alt="Logotipo con fondo transparente"
+      title="Imagen en formato PNG">
+
+    <p>GIF:</p>
+    <img
+      width="300"
+      src="imagenes/animacion.gif"
+      alt="Animación sencilla formada por varios fotogramas"
+      title="Imagen animada en formato GIF">
+
+    <p>JPG:</p>
+    <img
+      width="450"
+      src="imagenes/paisaje.jpg"
+      alt="Paisaje utilizado como ejemplo de imagen JPG"
+      title="Imagen en formato JPG">
+
+    <pre>Los formatos tratados en la unidad tienen usos habituales diferentes:
+
+JPG/JPEG → habitual en fotografías e imágenes con muchos tonos.
+PNG → permite trabajar con transparencia.
+GIF → puede utilizarse para animaciones sencillas.
+
+El formato es una característica del archivo de imagen; la etiqueta &lt;img&gt; se utiliza para mostrarlo en la página.</pre>
+  </div>
+
+  <pre>Idea fundamental:
+
+&lt;img&gt; relaciona un elemento de la página con un archivo de imagen mediante src.
+
+alt describe la imagen mediante un texto alternativo.
+title proporciona información adicional.
+width y height controlan su tamaño de presentación.
+
+La ruta indicada en src debe localizar correctamente el archivo de imagen.</pre>
+
+</body>
+
+</html>

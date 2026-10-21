@@ -1,0 +1,6 @@
+{
+  "monstruos": [
+    { "nombre": "Goblin", "pv": 12 },
+    { "nombre": "Orco", "pv": 20 }
+  ]
+}

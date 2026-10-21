@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 2 - Favicon</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>El favicon de una página web</h1>
+
+  <div class="ejemplo">
+    <h2>Un icono asociado al documento</h2>
+
+    <p>
+      Esta página tiene un favicon asociado.
+      Si el navegador lo reconoce, aparecerá como un pequeño icono
+      junto al título de la página en la pestaña.
+    </p>
+
+    <pre>&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+
+rel → indica que el recurso es el icono de la página.
+href → indica la ruta del archivo del icono.
+type → indica el tipo de archivo.
+    
+El elemento link se encuentra dentro de head porque configura
+un recurso asociado al documento, no contenido de la página.</pre>
+  </div>
+
+</body>
+
+</html>

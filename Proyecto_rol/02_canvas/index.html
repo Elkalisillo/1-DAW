@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa RPG con Canvas</title>
+  <style>
+    body { background: #222; color: #eee; font-family: sans-serif; text-align: center; }
+    canvas {}
+  </style>
+</head>
+<body>
+  <h1>Mi mapa RPG</h1>
+  <p>Muévete con las flechas del teclado o con W A S D</p>
+
+  <!-- PASO 1: el "lienzo". Es un rectángulo vacío donde vamos a pintar. -->
+  <canvas id="mapa"></canvas>
+
+  <script>
+    // =====================================================
+    // PASO 2: conseguir el canvas y su "pincel" (el contexto)
+    // =====================================================
+    const canvas = document.getElementById('mapa');
+    const ctx = canvas.getContext('2d'); // ctx es el pincel: con él dibujamos todo
+
+    // =====================================================
+    // PASO 3: el mapa es una CUADRÍCULA de números
+    // Cada número es un tipo de casilla ("tile"):
+    //   0 = hierba   1 = agua   2 = árbol   3 = camino   4 = casa
+    // =====================================================
+    const mapa = [
+      [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+      [2, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 1, 1, 2],
+      [2, 0, 4, 0, 0, 0, 3, 0, 0, 0, 0, 1, 1, 1, 2],
+      [2, 0, 3, 3, 3, 3, 3, 0, 0, 2, 0, 0, 1, 1, 2],
+      [2, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 2],
+      [2, 0, 2, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 2],
+      [2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2],
+      [2, 1, 1, 0, 0, 0, 0, 2, 0, 0, 0, 3, 4, 0, 2],
+      [2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+      [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    ];
+
+    const TAM = 50; // tamaño en píxeles de cada casilla
+
+    // El canvas mide justo lo que ocupa el mapa
+    canvas.width = mapa[0].length * TAM;  // columnas × tamaño
+    canvas.height = mapa.length * TAM;    // filas × tamaño
+
+    // Colores de cada tipo de casilla
+    const colores = {
+      0: '#4caf50', // hierba
+      1: '#2196f3', // agua
+      2: '#1b5e20', // árbol
+      3: '#c8a165', // camino
+      4: '#8d6e63', // casa
+    };
+
+    // Casillas por las que NO se puede caminar
+    const bloqueadas = [1, 2, 4];
+
+    // =====================================================
+    // PASO 4: el jugador. Guardamos en qué casilla está.
+    // =====================================================
+    const jugador = { col: 6, fila: 4 };
+
+    // =====================================================
+    // PASO 5: funciones de dibujo
+    // =====================================================
+    function dibujarMapa() {
+      // Recorremos cada fila y cada columna de la cuadrícula
+      for (let fila = 0; fila < mapa.length; fila++) {
+        for (let col = 0; col < mapa[fila].length; col++) {
+          const tipo = mapa[fila][col];
+          const x = col * TAM;   // posición en píxeles
+          const y = fila * TAM;
+
+          // Pintamos el cuadrado de fondo
+          ctx.fillStyle = colores[tipo];
+          ctx.fillRect(x, y, TAM, TAM);
+
+          // Detalles extra según el tipo
+          if (tipo === 2) {
+            // Árbol: un círculo verde más claro encima
+            ctx.fillStyle = '#2e7d32';
+            ctx.beginPath();
+            ctx.arc(x + TAM / 2, y + TAM / 2, TAM / 2.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          if (tipo === 4) {
+            // Casa: un tejado triangular rojo
+            ctx.fillStyle = '#c62828';
+            ctx.beginPath();
+            ctx.moveTo(x + 4, y + TAM / 2);
+            ctx.lineTo(x + TAM / 2, y + 4);
+            ctx.lineTo(x + TAM - 4, y + TAM / 2);
+            ctx.fill();
+          }
+
+          // Líneas finas de la cuadrícula (ayudan a ver las casillas)
+          ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+          ctx.strokeRect(x, y, TAM, TAM);
+        }
+      }
+    }
+
+    function dibujarJugador() {
+      const x = jugador.col * TAM + TAM / 2; // centro de su casilla
+      const y = jugador.fila * TAM + TAM / 2;
+
+      // Cuerpo
+      ctx.fillStyle = '#ffeb3b';
+      ctx.beginPath();
+      ctx.arc(x, y, TAM / 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.lineWidth = 1;
+
+      // Ojos
+      ctx.fillStyle = '#000';
+      ctx.fillRect(x - 6, y - 5, 4, 4);
+      ctx.fillRect(x + 2, y - 5, 4, 4);
+    }
+
+    // Dibuja TODO de nuevo. Canvas no "recuerda" objetos:
+    // si algo se mueve, se borra todo y se vuelve a pintar.
+    function dibujar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dibujarMapa();
+      dibujarJugador();
+    }
+
+    // =====================================================
+    // PASO 6: mover al jugador con el teclado
+    // =====================================================
+    document.addEventListener('keydown', (evento) => {
+      let nuevaCol = jugador.col;
+      let nuevaFila = jugador.fila;
+
+      if (evento.key === 'ArrowUp'    || evento.key === 'w') nuevaFila--;
+      if (evento.key === 'ArrowDown'  || evento.key === 's') nuevaFila++;
+      if (evento.key === 'ArrowLeft'  || evento.key === 'a') nuevaCol--;
+      if (evento.key === 'ArrowRight' || evento.key === 'd') nuevaCol++;
+
+      // ¿La casilla destino se puede pisar?
+      const tipoDestino = mapa[nuevaFila][nuevaCol];
+      if (!bloqueadas.includes(tipoDestino)) {
+        jugador.col = nuevaCol;
+        jugador.fila = nuevaFila;
+      }
+
+      evento.preventDefault(); // evita que las flechas hagan scroll en la página
+      dibujar();               // repintamos con la nueva posición
+    });
+
+    // Primer dibujo al cargar la página
+    dibujar();
+  </script>
+</body>
+</html>

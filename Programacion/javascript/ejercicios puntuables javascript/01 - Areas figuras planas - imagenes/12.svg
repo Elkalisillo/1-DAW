@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" font-family="Times New Roman" font-size="16">
+  <rect width="170" height="170" fill="white"/>
+  <circle cx="85" cy="85" r="57" fill="none" stroke="#3e6fa8" stroke-width="36"/>
+  <circle cx="85" cy="85" r="75" fill="none" stroke="#24476e" stroke-width="3"/>
+  <circle cx="85" cy="85" r="39" fill="none" stroke="#24476e" stroke-width="3"/>
+  <line x1="85" y1="85" x2="160" y2="85" stroke="black"/>
+  <line x1="85" y1="85" x2="85" y2="124" stroke="black"/>
+  <text x="140" y="80">R</text>
+  <text x="90" y="112">r</text>
+</svg>

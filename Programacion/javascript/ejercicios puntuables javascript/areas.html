@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Áreas de figuras planas</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f4f8; max-width: 700px; margin: auto; padding: 20px; }
+        h1, h2 { color: #2c5282; }
+        img { width: 150px; }
+        button { background-color: #2c5282; color: white; border: none; padding: 6px 12px; border-radius: 4px; }
+        .resultado { color: green; font-weight: bold; }
+    </style>
+    <script>
+        function areaRectangulo() {
+            let b = parseFloat(document.getElementById("rectanguloBase").value);
+            let a = parseFloat(document.getElementById("rectanguloAltura").value);
+            let area = b * a;
+            document.getElementById("resultadoRectangulo").innerHTML = "El área es: " + area;
+        }
+
+        function areaTriangulo() {
+            let b = parseFloat(document.getElementById("trianguloBase").value);
+            let a = parseFloat(document.getElementById("trianguloAltura").value);
+            let area = (b * a) / 2;
+            document.getElementById("resultadoTriangulo").innerHTML = "El área es: " + area;
+        }
+
+        function areaRombo() {
+            let D = parseFloat(document.getElementById("romboD").value);
+            let d = parseFloat(document.getElementById("rombod").value);
+            let area = (D * d) / 2;
+            document.getElementById("resultadoRombo").innerHTML = "El área es: " + area;
+        }
+
+        function areaCuadrado() {
+            let l = parseFloat(document.getElementById("cuadradoLado").value);
+            let area = l * l;
+            document.getElementById("resultadoCuadrado").innerHTML = "El área es: " + area;
+        }
+
+        function areaParalelogramo() {
+            let b = parseFloat(document.getElementById("paralelogramoBase").value);
+            let a = parseFloat(document.getElementById("paralelogramoAltura").value);
+            let area = b * a;
+            document.getElementById("resultadoParalelogramo").innerHTML = "El área es: " + area;
+        }
+
+        function areaTrapecio() {
+            let B = parseFloat(document.getElementById("trapecioB").value);
+            let b = parseFloat(document.getElementById("trapeciob").value);
+            let a = parseFloat(document.getElementById("trapecioAltura").value);
+            let area = ((B + b) * a) / 2;
+            document.getElementById("resultadoTrapecio").innerHTML = "El área es: " + area;
+        }
+
+        function areaRomboide() {
+            let D = parseFloat(document.getElementById("romboideD").value);
+            let d = parseFloat(document.getElementById("romboided").value);
+            let area = (D * d) / 2;
+            document.getElementById("resultadoRomboide").innerHTML = "El área es: " + area;
+        }
+
+        function areaPoligono() {
+            let n = parseFloat(document.getElementById("poligonoLados").value);
+            let l = parseFloat(document.getElementById("poligonoLado").value);
+            let ap = parseFloat(document.getElementById("poligonoApotema").value);
+            let perimetro = n * l;
+            let area = (perimetro * ap) / 2;
+            document.getElementById("resultadoPoligono").innerHTML = "El área es: " + area;
+        }
+
+        function areaCirculo() {
+            let r = parseFloat(document.getElementById("circuloRadio").value);
+            let area = Math.PI * r * r;
+            document.getElementById("resultadoCirculo").innerHTML = "El área es: " + area.toFixed(2);
+        }
+
+        function areaElipse() {
+            let a = parseFloat(document.getElementById("elipseA").value);
+            let b = parseFloat(document.getElementById("elipseB").value);
+            let area = Math.PI * a * b;
+            document.getElementById("resultadoElipse").innerHTML = "El área es: " + area.toFixed(2);
+        }
+
+        function areaSector() {
+            let r = parseFloat(document.getElementById("sectorRadio").value);
+            let angulo = parseFloat(document.getElementById("sectorAngulo").value);
+            let area = (Math.PI * r * r * angulo) / 360;
+            document.getElementById("resultadoSector").innerHTML = "El área es: " + area.toFixed(2);
+        }
+
+        function areaCorona() {
+            let R = parseFloat(document.getElementById("coronaR").value);
+            let r = parseFloat(document.getElementById("coronar").value);
+            let area = Math.PI * (R * R - r * r);
+            document.getElementById("resultadoCorona").innerHTML = "El área es: " + area.toFixed(2);
+        }
+
+        function areaEquilatero() {
+            let l = parseFloat(document.getElementById("equilateroLado").value);
+            let area = (Math.sqrt(3) / 4) * l * l;
+            document.getElementById("resultadoEquilatero").innerHTML = "El área es: " + area.toFixed(2);
+        }
+
+        function areaHexagono() {
+            let l = parseFloat(document.getElementById("hexagonoLado").value);
+            let area = ((3 * Math.sqrt(3)) / 2) * l * l;
+            document.getElementById("resultadoHexagono").innerHTML = "El área es: " + area.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+
+    <h1 id="indice">Áreas de figuras planas</h1>
+
+    <p><a href="areas-botones.html">Ver la versión con botones</a></p>
+
+    <h3>Índice</h3>
+    <ul>
+        <li><a href="#rectangulo">Rectángulo</a></li>
+        <li><a href="#triangulo">Triángulo</a></li>
+        <li><a href="#rombo">Rombo</a></li>
+        <li><a href="#cuadrado">Cuadrado</a></li>
+        <li><a href="#paralelogramo">Paralelogramo</a></li>
+        <li><a href="#trapecio">Trapecio</a></li>
+        <li><a href="#romboide">Romboide</a></li>
+        <li><a href="#poligono">Polígono regular</a></li>
+        <li><a href="#circulo">Círculo</a></li>
+        <li><a href="#elipse">Elipse</a></li>
+        <li><a href="#sector">Sector circular</a></li>
+        <li><a href="#corona">Corona circular</a></li>
+        <li><a href="#equilatero">Triángulo equilátero</a></li>
+        <li><a href="#hexagono">Hexágono regular</a></li>
+    </ul>
+
+    <hr>
+
+    <h2 id="rectangulo">Rectángulo</h2>
+    <img src="01 - Areas figuras planas - imagenes/1.jpg" alt="Rectángulo">
+    <p>Área = base · altura</p>
+    <p>Base: <input type="text" id="rectanguloBase"></p>
+    <p>Altura: <input type="text" id="rectanguloAltura"></p>
+    <button onclick="areaRectangulo()">Calcular</button>
+    <p class="resultado" id="resultadoRectangulo"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="triangulo">Triángulo</h2>
+    <img src="01 - Areas figuras planas - imagenes/2.jpg" alt="Triángulo">
+    <p>Área = (base · altura) / 2</p>
+    <p>Base: <input type="text" id="trianguloBase"></p>
+    <p>Altura: <input type="text" id="trianguloAltura"></p>
+    <button onclick="areaTriangulo()">Calcular</button>
+    <p class="resultado" id="resultadoTriangulo"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="rombo">Rombo</h2>
+    <img src="01 - Areas figuras planas - imagenes/3.jpg" alt="Rombo">
+    <p>Área = (D · d) / 2</p>
+    <p>Diagonal mayor (D): <input type="text" id="romboD"></p>
+    <p>Diagonal menor (d): <input type="text" id="rombod"></p>
+    <button onclick="areaRombo()">Calcular</button>
+    <p class="resultado" id="resultadoRombo"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="cuadrado">Cuadrado</h2>
+    <img src="01 - Areas figuras planas - imagenes/4.jpg" alt="Cuadrado">
+    <p>Área = lado · lado</p>
+    <p>Lado: <input type="text" id="cuadradoLado"></p>
+    <button onclick="areaCuadrado()">Calcular</button>
+    <p class="resultado" id="resultadoCuadrado"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="paralelogramo">Paralelogramo</h2>
+    <img src="01 - Areas figuras planas - imagenes/5.png" alt="Paralelogramo">
+    <p>Área = base · altura</p>
+    <p>Base: <input type="text" id="paralelogramoBase"></p>
+    <p>Altura: <input type="text" id="paralelogramoAltura"></p>
+    <button onclick="areaParalelogramo()">Calcular</button>
+    <p class="resultado" id="resultadoParalelogramo"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="trapecio">Trapecio</h2>
+    <img src="01 - Areas figuras planas - imagenes/6.jpg" alt="Trapecio">
+    <p>Área = ((B + b) · altura) / 2</p>
+    <p>Base mayor (B): <input type="text" id="trapecioB"></p>
+    <p>Base menor (b): <input type="text" id="trapeciob"></p>
+    <p>Altura: <input type="text" id="trapecioAltura"></p>
+    <button onclick="areaTrapecio()">Calcular</button>
+    <p class="resultado" id="resultadoTrapecio"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="romboide">Romboide</h2>
+    <img src="01 - Areas figuras planas - imagenes/7.jpg" alt="Romboide">
+    <p>Área = (D · d) / 2</p>
+    <p>Diagonal mayor (D): <input type="text" id="romboideD"></p>
+    <p>Diagonal menor (d): <input type="text" id="romboided"></p>
+    <button onclick="areaRomboide()">Calcular</button>
+    <p class="resultado" id="resultadoRomboide"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="poligono">Polígono regular</h2>
+    <img src="01 - Areas figuras planas - imagenes/8.png" alt="Polígono regular">
+    <p>Área = (perímetro · apotema) / 2</p>
+    <p>Número de lados: <input type="text" id="poligonoLados"></p>
+    <p>Medida del lado: <input type="text" id="poligonoLado"></p>
+    <p>Apotema: <input type="text" id="poligonoApotema"></p>
+    <button onclick="areaPoligono()">Calcular</button>
+    <p class="resultado" id="resultadoPoligono"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="circulo">Círculo</h2>
+    <img src="01 - Areas figuras planas - imagenes/9.jpg" alt="Círculo">
+    <p>Área = π · radio²</p>
+    <p>Radio: <input type="text" id="circuloRadio"></p>
+    <button onclick="areaCirculo()">Calcular</button>
+    <p class="resultado" id="resultadoCirculo"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="elipse">Elipse</h2>
+    <img src="01 - Areas figuras planas - imagenes/10.svg" alt="Elipse">
+    <p>Área = π · a · b</p>
+    <p>Semieje mayor (a): <input type="text" id="elipseA"></p>
+    <p>Semieje menor (b): <input type="text" id="elipseB"></p>
+    <button onclick="areaElipse()">Calcular</button>
+    <p class="resultado" id="resultadoElipse"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="sector">Sector circular</h2>
+    <img src="01 - Areas figuras planas - imagenes/11.svg" alt="Sector circular">
+    <p>Área = (π · radio² · ángulo) / 360</p>
+    <p>Radio: <input type="text" id="sectorRadio"></p>
+    <p>Ángulo en grados: <input type="text" id="sectorAngulo"></p>
+    <button onclick="areaSector()">Calcular</button>
+    <p class="resultado" id="resultadoSector"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="corona">Corona circular</h2>
+    <img src="01 - Areas figuras planas - imagenes/12.svg" alt="Corona circular">
+    <p>Área = π · (R² − r²)</p>
+    <p>Radio exterior (R): <input type="text" id="coronaR"></p>
+    <p>Radio interior (r): <input type="text" id="coronar"></p>
+    <button onclick="areaCorona()">Calcular</button>
+    <p class="resultado" id="resultadoCorona"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="equilatero">Triángulo equilátero</h2>
+    <img src="01 - Areas figuras planas - imagenes/13.svg" alt="Triángulo equilátero">
+    <p>Área = (√3 / 4) · lado²</p>
+    <p>Lado: <input type="text" id="equilateroLado"></p>
+    <button onclick="areaEquilatero()">Calcular</button>
+    <p class="resultado" id="resultadoEquilatero"></p>
+    <a href="#indice">Volver al índice</a>
+
+    <hr>
+
+    <h2 id="hexagono">Hexágono regular</h2>
+    <img src="01 - Areas figuras planas - imagenes/14.svg" alt="Hexágono regular">
+    <p>Área = (3 · √3 / 2) · lado²</p>
+    <p>Lado: <input type="text" id="hexagonoLado"></p>
+    <button onclick="areaHexagono()">Calcular</button>
+    <p class="resultado" id="resultadoHexagono"></p>
+    <a href="#indice">Volver al índice</a>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 1 - Tabla completa de datos</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    /* ESTILOS ESPECÍFICOS DEL EJEMPLO */
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #e8b35f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Ejemplo 1: tabla completa de datos</h1>
+
+  <pre>
+Una tabla HTML organiza información en filas y columnas.
+
+- &lt;table&gt; contiene toda la tabla.
+- &lt;caption&gt; identifica el contenido de la tabla.
+- &lt;thead&gt; contiene las filas de cabecera.
+- &lt;tbody&gt; contiene los datos principales.
+- &lt;tfoot&gt; contiene información final o resumida.
+- &lt;tr&gt; representa una fila.
+- &lt;th&gt; representa una celda de cabecera.
+- &lt;td&gt; representa una celda de datos.
+
+En este ejemplo, &lt;th&gt; se utiliza para indicar qué representa
+cada columna y &lt;td&gt; para los datos de cada equipo.
+  </pre>
+
+  <div class="ejemplo">
+
+    <table>
+
+      <caption>Resultados del torneo de desarrollo web</caption>
+
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>Puntos</th>
+          <th>Goles</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Equipo Alfa</td>
+          <td>12</td>
+          <td>18</td>
+        </tr>
+
+        <tr>
+          <td>Equipo Beta</td>
+          <td>10</td>
+          <td>15</td>
+        </tr>
+
+        <tr>
+          <td>Equipo Gamma</td>
+          <td>7</td>
+          <td>11</td>
+        </tr>
+
+        <tr>
+          <td>Equipo Delta</td>
+          <td>4</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>33</td>
+          <td>52</td>
+        </tr>
+      </tfoot>
+
+    </table>
+
+  </div>
+
+  <pre>
+La estructura de la tabla puede entenderse de esta forma:
+
+&lt;table&gt;
+    &lt;caption&gt;Título de la tabla&lt;/caption&gt;
+
+    &lt;thead&gt;
+        Cabeceras
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        Datos
+    &lt;/tbody&gt;
+
+    &lt;tfoot&gt;
+        Información final
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+
+Dentro de cada sección se utilizan filas &lt;tr&gt;.
+Las cabeceras utilizan &lt;th&gt; y los datos utilizan &lt;td&gt;.
+
+La organización mediante &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt;
+permite distinguir semánticamente las diferentes partes
+de la tabla.
+  </pre>
+
+</body>
+
+</html>

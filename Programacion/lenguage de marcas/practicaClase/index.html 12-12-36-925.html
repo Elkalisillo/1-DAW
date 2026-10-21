@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Clase</title>
+</head>
+
+<body>
+    <script>
+        function boton1() {
+            let texto = document.getElementById("i_texto").value;
+
+            elementoSeleccionado.innerText = texto;
+        }
+        
+        function funcion_1(elemento) {
+            elementoSeleccionado = elemento;
+            document.getElementById("seleccionado").innerText = elemento.id;
+        }
+    </script>
+
+    <input type="text" id="i_texto" placeholder="Ingrese texto">
+    <button onclick="boton1()">Escribe</button>
+
+    <p>Seleccionado: <span id="seleccionado"></span></p>
+    <h1 id="h1" onclick="funcion_1(this)">Encabezado 1</h1>
+    <p id="p1" onclick="funcion_1(this)">Este es un párrafo de ejemplo.</p>
+    <h1 id="h2" onclick="funcion_1(this)">Encabezado 2</h1>
+    <p id="p2" onclick="funcion_1(this)">Este es otro párrafo de ejemplo.</p>
+</body>
+
+</html>

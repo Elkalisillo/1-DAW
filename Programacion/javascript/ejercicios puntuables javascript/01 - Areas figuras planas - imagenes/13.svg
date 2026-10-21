@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="180" font-family="Times New Roman" font-size="16">
+  <rect width="200" height="180" fill="white"/>
+  <polygon points="20,160 180,160 100,21.4" fill="#3e6fa8" stroke="#24476e" stroke-width="3"/>
+  <text x="96" y="177">l</text>
+  <text x="146" y="90">l</text>
+  <text x="48" y="90">l</text>
+</svg>

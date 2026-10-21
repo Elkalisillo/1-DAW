@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" font-family="Times New Roman" font-size="16">
+  <rect width="200" height="150" fill="white"/>
+  <path d="M40 130 L170 130 A130 130 0 0 0 105 17.4 Z" fill="#3e6fa8" stroke="#24476e" stroke-width="3"/>
+  <path d="M70 130 A30 30 0 0 0 55 104" fill="none" stroke="black"/>
+  <text x="72" y="120">α</text>
+  <text x="100" y="146">r</text>
+</svg>

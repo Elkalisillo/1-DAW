@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <div class="contenedor-fijo">
+        <span class="contenido">Este es un contenedor fijo que no se mueve.</span>
+    </div>
+
+    <div class="contenedor-movible" id="miContenedor">
+        <div class="barra-arrastre" id="miBarra">¡Arrástrame desde aquí!</div>
+        <div class="contenido">
+            <p>Puedes mover todo este contenedor haciendo clic y arrastrando la barra azul superior.</p>
+        </div>
+    </div>
+
+    <script>
+        const contenedor = document.getElementById('miContenedor');
+        const barra = document.getElementById('miBarra');
+
+        let enMovimiento = false;
+        let Xinicial, Yinicial;
+        let desplazamientoX = 0, desplazamientoY = 0;
+
+        // Detectar cuando el usuario presiona el elemento (ratón o táctil)
+        barra.addEventListener('pointerdown', (e) => {
+            enMovimiento = true;
+
+            Xinicial = e.clientX - desplazamientoX;
+            Yinicial = e.clientY - desplazamientoY;
+
+            barra.setPointerCapture(e.pointerId);
+        });
+
+        barra.addEventListener('pointermove', (e) => {
+            if (!enMovimiento) return;
+
+            desplazamientoX = e.clientX - Xinicial;
+            desplazamientoY = e.clientY - Yinicial;
+
+            contenedor.style.transform = `translate(${desplazamientoX}px, ${desplazamientoY}px)`;
+        });
+
+        barra.addEventListener('pointerup', (e) => {
+            enMovimiento = false;
+            barra.releasePointerCapture(e.pointerId);
+        });
+    </script>
+
+
+    <script>
+        /*
+        let numero1 = prompt("Ingresa el primer número:", "12");
+
+        alert("El doble es: " + numero1*2);
+
+        alert("Hola, este es un mensaje de prueba, dime tu nombre y te saludaré");
+
+        var nombre = prompt("¿Cuál es tu nombre? ", "Escribe tu nombre aquí");
+
+        if (nombre) {
+            alert("¡Hola, " + nombre + "! ¡Encantado de conocerte!");
+        } else {
+            alert("No ingresaste un nombre.");
+        }
+        */
+
+
+        /*function calcular() {
+                let n1 = prompt("Ingresa el primer número:");
+                let n2 = prompt("Ingresa el segundo número:");
+        
+                n1 = parseFloat(n1);
+                n2 = parseFloat(n2);
+        
+                alert("La suma de " + n1 + " y " + n2 + " es: " + (n1 + n2));
+                alert("La resta de " + n1 + " y " + n2 + " es: " + (n1 - n2));
+                alert("La multiplicación de " + n1 + " y " + n2 + " es: " + (n1 * n2));
+                alert("La división de " + n1 + " y " + n2 + " es: " + (n1 / n2));
+                alert("El módulo de " + n1 + " y " + n2 + " es: " + (n1 % n2));
+                alert("El tipo de dato de " + n1 + " es: " + typeof n1);
+                alert("El tipo de dato de " + n2 + " es: " + typeof n2);
+        }
+        */
+        /*
+        function funcion1() {
+            alert("¡Hola! Esta es la función 1.");
+        }
+
+        let numeros = [0, 1, 2, 3, 4, 5];
+
+        let numero_elegido = prompt("Ingresa un número del 0 al 5.");
+
+        alert("El número elegido es: " + numeros[numero_elegido]);
+        */
+        const tamaño_font = a => document.getElementById('texto-ejemplo').size = a;
+
+        const multiplicacion = n => alert("El resultado es: " + n * n);
+
+        for (let i = 0; i < 5; i++) {
+            console.log("Iteración número: " + i);
+        }
+
+        function funcion1() {
+            var variable = document.getElementById("texto-ejemplo").value;
+        }
+
+    </script>
+    <button onclick="funcion1()">Haz clic aquí</button>
+    <br>
+    <font size="5" id="texto-ejemplo">Este es un texto de ejemplo con tamaño 5.</font>
+    <button onclick="tamaño_font(1)">Tamaño 1</button>
+    <button onclick="tamaño_font(2)">Tamaño 2</button>
+    <button onclick="tamaño_font(3)">Tamaño 3</button>
+    <button onclick="tamaño_font(4)">Tamaño 4</button>
+    <button onclick="tamaño_font(5)">Tamaño 5</button>
+    <button onclick="tamaño_font(6)">Tamaño 6</button>
+    <button onclick="multiplicacion(prompt('Ingresa un número:'))">Multiplicar</button>
+
+    <div id="contenedor_1">
+        <div class="contenedor_2"></div>
+        <div class="contenedor_3"></div>
+    </div>
+</body>
+
+</html>

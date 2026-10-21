@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 4 - Listas anidadas y datos combinados</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    /* ESTILOS ESPECÍFICOS DEL EJEMPLO */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #e8b35f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Ejemplo 4: Listas anidadas y datos combinados</h1>
+
+  <pre>
+Una lista puede contener otra lista dentro de uno de sus elementos li.
+Así se representa una jerarquía: los elementos secundarios pertenecen
+a un elemento principal.
+
+También podemos incluir listas dentro de las celdas de una tabla.
+La tabla organiza la información en filas y columnas, mientras que
+la lista agrupa varios elementos relacionados dentro de una celda.
+  </pre>
+
+  <div class="ejemplo">
+
+    <h2>1. Lista anidada: organización de un proyecto web</h2>
+
+    <ol>
+      <li>
+        Preparación del proyecto
+        <ul>
+          <li>Analizar los requisitos</li>
+          <li>Organizar los contenidos</li>
+        </ul>
+      </li>
+
+      <li>
+        Desarrollo de la página
+        <ul>
+          <li>Crear la estructura HTML</li>
+          <li>Incorporar tablas y listas</li>
+        </ul>
+      </li>
+
+      <li>
+        Revisión final
+        <ul>
+          <li>Comprobar los contenidos</li>
+          <li>Verificar la estructura</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>2. Tabla con listas en sus celdas</h2>
+
+    <table>
+      <caption>Planificación de un proyecto web</caption>
+
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Tareas</th>
+          <th>Entregables</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>Diseño</th>
+          <td>
+            <ul>
+              <li>Analizar requisitos</li>
+              <li>Organizar contenidos</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Documento de requisitos</li>
+              <li>Estructura de páginas</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Desarrollo</th>
+          <td>
+            <ul>
+              <li>Crear páginas HTML</li>
+              <li>Organizar la información</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Páginas terminadas</li>
+              <li>Contenido organizado</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <pre>
+Observa la relación entre las etiquetas y el resultado:
+
+- En la lista anidada, cada ul está dentro del li al que pertenece.
+  Por eso, sus elementos aparecen como subtareas de una fase.
+
+- En la tabla, tr representa cada fila y th o td identifica sus celdas.
+  Dentro de una celda td puede incluirse una lista ul con varios li.
+
+La tabla organiza los datos por filas y columnas. Las listas permiten
+agrupar los elementos relacionados dentro de cada parte de esa tabla.
+  </pre>
+
+</body>
+
+</html>

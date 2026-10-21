@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ejemplo 3 - Listas HTML</title>
+
+  <style>
+    /* FORMATO GENERAL DEL EJEMPLO */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5e9ce;
+      color: #925612;
+    }
+
+    h1 {
+      color: #925612;
+    }
+
+    pre {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    .ejemplo {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Ejemplo 3: Listas HTML</h1>
+
+  <pre>
+HTML ofrece distintos tipos de listas según la información que
+queremos representar.
+
+- ol: presenta elementos en un orden numerado.
+- ul: agrupa elementos sin establecer un orden numérico.
+- dl: relaciona términos con sus definiciones.
+
+Las listas ol y ul utilizan li para representar cada elemento.
+Las listas dl utilizan dt para el término y dd para su descripción.
+  </pre>
+
+  <div class="ejemplo">
+
+    <h2>1. Lista ordenada</h2>
+
+    <p>Pasos para preparar un proyecto web:</p>
+
+    <ol>
+      <li>Analizar los requisitos.</li>
+      <li>Diseñar la estructura HTML.</li>
+      <li>Crear las páginas.</li>
+      <li>Comprobar el resultado.</li>
+    </ol>
+
+    <h2>2. Lista desordenada</h2>
+
+    <p>Tecnologías utilizadas en el proyecto:</p>
+
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>PHP</li>
+    </ul>
+
+    <h2>3. Lista ordenada con letras</h2>
+
+    <p>Fases de una revisión:</p>
+
+    <ol type="A">
+      <li>Revisar la estructura.</li>
+      <li>Comprobar los contenidos.</li>
+      <li>Validar el resultado.</li>
+    </ol>
+
+    <h2>4. Lista de definiciones</h2>
+
+    <dl>
+      <dt>HTML</dt>
+      <dd>Lenguaje de marcado utilizado para estructurar el contenido de una página web.</dd>
+
+      <dt>CSS</dt>
+      <dd>Lenguaje utilizado para definir la presentación visual de una página web.</dd>
+
+      <dt>PHP</dt>
+      <dd>Lenguaje de programación que puede ejecutarse en el servidor para generar contenido web.</dd>
+    </dl>
+
+  </div>
+
+  <pre>
+Patrones que debes reconocer en el código:
+
+1. Lista ordenada:
+   ol contiene varios li.
+
+2. Lista desordenada:
+   ul contiene varios li.
+
+3. Lista ordenada con letras:
+   ol utiliza type="A" para cambiar la numeración.
+
+4. Lista de definiciones:
+   dl contiene pares formados por dt (término) y dd (definición).
+
+El tipo de lista depende de la relación entre los elementos:
+si importa la secuencia, se utiliza ol; si no importa el orden,
+se utiliza ul; si se relacionan términos con sus descripciones,
+se utiliza dl.
+  </pre>
+
+</body>
+
+</html>
