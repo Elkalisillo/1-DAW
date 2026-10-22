@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escribir en la zona que se pulsa</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f4f8; max-width: 600px; margin: auto; padding: 20px; }
+        h1 { color: #2c5282; cursor: pointer; }
+        p { cursor: pointer; }
+        button { background-color: #2c5282; color: white; border: none; padding: 6px 12px; border-radius: 4px; }
+    </style>
+    <script>
+        let seleccionado = "";
+
+        function seleccionar(id) {
+            seleccionado = id;
+            document.getElementById("identificador").innerHTML = id;
+        }
+
+        function escribir() {
+            let texto = document.getElementById("texto").value;
+            if (seleccionado != "") {
+                document.getElementById(seleccionado).innerHTML = texto;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Texto: <input type="text" id="texto"> <button onclick="escribir()">Escribir</button></p>
+    <p>Seleccionado: <span id="identificador"></span></p>
+
+    <h1 id="h1" onclick="seleccionar('h1')">Encabezado 1</h1>
+    <p id="p1" onclick="seleccionar('p1')">párrafo 1</p>
+    <h1 id="h2" onclick="seleccionar('h2')">Encabezado 2</h1>
+    <p id="p2" onclick="seleccionar('p2')">párrafo 2</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escribir en un contenedor</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f4f8; max-width: 600px; margin: auto; padding: 20px; }
+        h1 { color: #2c5282; }
+        button { background-color: #2c5282; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin: 3px; }
+        #contenedor { background-color: white; padding: 10px; margin-top: 10px; min-height: 50px; }
+        td, th { padding: 5px 10px; }
+    </style>
+    <script>
+        function corto() {
+            document.getElementById("contenedor").innerHTML = `
+                <p>Esto es un rectángulo.</p>
+                <img src="imagenes/rectangulo.jpg" width="100">
+            `;
+        }
+
+        function largo() {
+            document.getElementById("contenedor").innerHTML = `
+                <p>El triángulo es un polígono de tres lados. Su área se calcula multiplicando la base por la altura y dividiendo entre dos. Hay varios tipos según sus lados: equilátero, isósceles y escaleno.</p>
+                <img src="imagenes/triangulo.jpg" width="200">
+                <table border="1">
+                    <tr><th>Tipo</th><th>Lados iguales</th></tr>
+                    <tr><td>Equilátero</td><td>3</td></tr>
+                    <tr><td>Isósceles</td><td>2</td></tr>
+                    <tr><td>Escaleno</td><td>0</td></tr>
+                </table>
+            `;
+        }
+
+        function borrar() {
+            document.getElementById("contenedor").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>Escribir en un contenedor</h1>
+    <button onclick="corto()">Texto corto</button>
+    <button onclick="largo()">Texto largo</button>
+    <button onclick="borrar()">Borrar</button>
+    <div id="contenedor"></div>
+</body>
+</html>
