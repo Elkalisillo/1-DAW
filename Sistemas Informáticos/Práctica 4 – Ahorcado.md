@@ -138,30 +138,85 @@ else:
 
 ---
 
+## Diagrama de flujo
+
+Este diagrama resume cómo funciona el programa: primero se elige la dificultad y la palabra, después se repite el bucle de la partida hasta ganar o quedarse sin intentos y, al final, se pregunta si se quiere jugar otra vez.
+
+```mermaid
+flowchart TD
+    A([INICIO]) --> B["Elegir dificultad (1, 2 o 3)"]
+    B --> C["Elegir palabra al azar<br/>random.choice"]
+    C --> D["letras_adivinadas = []<br/>intentos = 6"]
+    D --> E{"¿intentos > 0?"}
+
+    E -- Sí --> F["Construir palabra_mostrada<br/>(letra acertada o _)"]
+    F --> G[/"Mostrar dibujo y palabra_mostrada"/]
+    G --> H{"¿Queda algún _?"}
+    H -- No --> I[/"¡Felicidades! Has adivinado la palabra"/]
+    H -- Sí --> J[/"Mostrar letras usadas<br/>Pedir una letra"/]
+
+    J --> K{"¿Es una sola letra?"}
+    K -- No --> K1[/"Ingresa solo una letra"/] --> E
+    K -- Sí --> L{"¿Ya se ha usado?"}
+    L -- Sí --> L1[/"Ya has usado esa letra"/] --> E
+    L -- No --> M["Guardar en letras_adivinadas"]
+
+    M --> N{"¿Está en la palabra?"}
+    N -- Sí --> N1[/"¡Correcto!"/] --> E
+    N -- No --> N2["intentos -= 1<br/>Mostrar 'Fallaste'"] --> E
+
+    E -- No --> P[/"Dibujo completo<br/>¡Has perdido! y la palabra"/]
+
+    I --> Q{"¿Jugar de nuevo? (s/n)"}
+    P --> Q
+    Q -- s --> B
+    Q -- n --> R([FIN])
+```
+
+---
+
 ## Pruebas
 
 ### Victoria
 
-<!-- Añade aquí tu captura, por ejemplo: ![[imagenes/victoria.png]] -->
+Partida en dificultad fácil: el jugador adivina las letras de **sol** y el programa le felicita.
+
+![[imagenes/victoria.png]]
 
 ### Derrota
 
-<!-- Añade aquí tu captura, por ejemplo: ![[imagenes/derrota.png]] -->
+Partida en dificultad difícil: se acaban los 6 intentos, se dibuja el muñeco completo y se muestra la palabra (**algoritmo**).
+
+![[imagenes/derrota.png]]
 
 ### Extras
 
 #### Elegir dificultad
 
-<!-- ![[imagenes/dificultad.png]] -->
+Sale el menú de dificultad. Si se escribe algo que no es 1, 2 o 3 (aquí una `s`), el programa lo vuelve a pedir.
 
-#### Letras repetidas y letras usadas
+![[imagenes/dificultad.png]]
 
-<!-- ![[imagenes/repetida.png]] -->
+#### Letras usadas
+
+Debajo de la palabra se muestran todas las letras que ya se han probado.
+
+![[imagenes/letras_usadas.png]]
+
+#### Letras repetidas
+
+Si se escribe una letra que ya se ha probado (aquí la `a`), el programa avisa y no resta ningún intento.
+
+![[imagenes/repetida.png]]
 
 #### Solo una letra
 
-<!-- ![[imagenes/solo_una_letra.png]] -->
+Si se escriben dos letras (`al`), el programa avisa y no resta ningún intento.
+
+![[imagenes/solo_una_letra.png]]
 
 #### Dibujo del ahorcado
 
-<!-- ![[imagenes/dibujo.png]] -->
+Con cada fallo se dibuja una parte más del muñeco.
+
+![[imagenes/dibujo.png]]
