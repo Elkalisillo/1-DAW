@@ -1,4 +1,5 @@
-// Conector 2: prestamos el estado a quien lo necesite
+// Conector 1: el estado compartido de toda la app
 export const estado = {
-  monstruos: []      // empieza vacía; la llenaremos con el JSON
+  monstruos: [],
+  heroes: []
 };

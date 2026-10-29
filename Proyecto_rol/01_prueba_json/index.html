@@ -1,15 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Prueba</title>
+  <meta charset="utf-8">
+  <title>Monstruos y héroes</title>
 </head>
 <body>
-  <h1>Mi primer monstruo</h1>
-  <p id="info">Cargando...</p>
-  <button id="boton-atacar">Atacar (-3 PV)</button>
+  <h1>Combate</h1>
+  <p id="info"></p>
+  <button id="boton-atacar">Atacar (-3)</button>
 
-  <!-- Conector 1: el HTML llama a main.js -->
-  <script type="module" src="js/main.js"></script>
+  <h2>Crear héroe</h2>
+  <form id="form-heroe">
+    <label>Nombre <input id="heroe-nombre" required></label>
+
+    <label>Clase
+      <select id="heroe-clase">
+        <option>Guerrero</option>
+        <option>Maga</option>
+        <option>Pícaro</option>
+        <option>Clérigo</option>
+      </select>
+    </label>
+
+    <label>PV <input id="heroe-pv" type="number" min="1" value="15" required></label>
+
+    <fieldset>
+      <legend>Habilidades</legend>
+      <label>Nombre <input id="hab-nombre"></label>
+      <label>Daño <input id="hab-danio" type="number" min="0" value="3"></label>
+      <button type="button" id="boton-add-habilidad">Añadir habilidad</button>
+      <ul id="habilidades-pendientes"></ul>
+    </fieldset>
+
+    <button type="submit">Crear héroe</button>
+  </form>
+
+  <h2>Héroes</h2>
+  <ul id="lista-heroes"></ul>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>

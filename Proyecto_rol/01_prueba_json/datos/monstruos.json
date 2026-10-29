@@ -2,5 +2,16 @@
   "monstruos": [
     { "nombre": "Goblin", "pv": 12 },
     { "nombre": "Orco", "pv": 20 }
+  ],
+  "heroes": [
+    {
+      "nombre": "Aria",
+      "clase": "Maga",
+      "pv": 18,
+      "habilidades": [
+        { "nombre": "Bola de fuego", "danio": 6 },
+        { "nombre": "Rayo", "danio": 4 }
+      ]
+    }
   ]
 }
