@@ -9,11 +9,13 @@
         img { width: 150px; }
         button { background-color: #2c827b; color: white; border: none; padding: 6px 12px; border-radius: 4px; margin: 3px; }
         .resultado { color: green; font-weight: bold; }
+        #contenedorc { margin-top: 20px; padding: 10px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     </style>
     <script>
 
         function mostrarRectangulo() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Rectángulo</h2>
                 <img src="01 - Areas figuras planas - imagenes/1.jpg" alt="Rectángulo">
                 <p>Área = base · altura</p>
@@ -21,11 +23,13 @@
                 <p>Altura: <input type="text" id="rectanguloAltura"></p>
                 <button onclick="areaRectangulo()">Calcular</button>
                 <p class="resultado" id="resultadoRectangulo"></p>
+                </div>
             `;
         }
 
         function mostrarTriangulo() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Triángulo</h2>
                 <img src="01 - Areas figuras planas - imagenes/2.jpg" alt="Triángulo">
                 <p>Área = (base · altura) / 2</p>
@@ -33,11 +37,13 @@
                 <p>Altura: <input type="text" id="trianguloAltura"></p>
                 <button onclick="areaTriangulo()">Calcular</button>
                 <p class="resultado" id="resultadoTriangulo"></p>
+                </div>
             `;
         }
 
         function mostrarRombo() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Rombo</h2>
                 <img src="01 - Areas figuras planas - imagenes/3.jpg" alt="Rombo">
                 <p>Área = (D · d) / 2</p>
@@ -45,22 +51,26 @@
                 <p>Diagonal menor (d): <input type="text" id="rombod"></p>
                 <button onclick="areaRombo()">Calcular</button>
                 <p class="resultado" id="resultadoRombo"></p>
+                </div>
             `;
         }
 
         function mostrarCuadrado() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Cuadrado</h2>
                 <img src="01 - Areas figuras planas - imagenes/4.jpg" alt="Cuadrado">
                 <p>Área = lado · lado</p>
                 <p>Lado: <input type="text" id="cuadradoLado"></p>
                 <button onclick="areaCuadrado()">Calcular</button>
                 <p class="resultado" id="resultadoCuadrado"></p>
+                </div>
             `;
         }
 
         function mostrarParalelogramo() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Paralelogramo</h2>
                 <img src="01 - Areas figuras planas - imagenes/5.png" alt="Paralelogramo">
                 <p>Área = base · altura</p>
@@ -68,11 +78,13 @@
                 <p>Altura: <input type="text" id="paralelogramoAltura"></p>
                 <button onclick="areaParalelogramo()">Calcular</button>
                 <p class="resultado" id="resultadoParalelogramo"></p>
+                </div>
             `;
         }
 
         function mostrarTrapecio() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Trapecio</h2>
                 <img src="01 - Areas figuras planas - imagenes/6.jpg" alt="Trapecio">
                 <p>Área = ((B + b) · altura) / 2</p>
@@ -81,11 +93,13 @@
                 <p>Altura: <input type="text" id="trapecioAltura"></p>
                 <button onclick="areaTrapecio()">Calcular</button>
                 <p class="resultado" id="resultadoTrapecio"></p>
+                </div>
             `;
         }
 
         function mostrarRomboide() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Romboide</h2>
                 <img src="01 - Areas figuras planas - imagenes/7.jpg" alt="Romboide">
                 <p>Área = (D · d) / 2</p>
@@ -93,11 +107,13 @@
                 <p>Diagonal menor (d): <input type="text" id="romboided"></p>
                 <button onclick="areaRomboide()">Calcular</button>
                 <p class="resultado" id="resultadoRomboide"></p>
+                </div>
             `;
         }
 
         function mostrarPoligono() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Polígono regular</h2>
                 <img src="01 - Areas figuras planas - imagenes/8.png" alt="Polígono regular">
                 <p>Área = (perímetro · apotema) / 2</p>
@@ -106,22 +122,26 @@
                 <p>Apotema: <input type="text" id="poligonoApotema"></p>
                 <button onclick="areaPoligono()">Calcular</button>
                 <p class="resultado" id="resultadoPoligono"></p>
+                </div>
             `;
         }
 
         function mostrarCirculo() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Círculo</h2>
                 <img src="01 - Areas figuras planas - imagenes/9.jpg" alt="Círculo">
                 <p>Área = π · radio²</p>
                 <p>Radio: <input type="text" id="circuloRadio"></p>
                 <button onclick="areaCirculo()">Calcular</button>
                 <p class="resultado" id="resultadoCirculo"></p>
+                </div>
             `;
         }
 
         function mostrarElipse() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Elipse</h2>
                 <img src="01 - Areas figuras planas - imagenes/10.svg" alt="Elipse">
                 <p>Área = π · a · b</p>
@@ -129,11 +149,13 @@
                 <p>Semieje menor (b): <input type="text" id="elipseB"></p>
                 <button onclick="areaElipse()">Calcular</button>
                 <p class="resultado" id="resultadoElipse"></p>
+                </div>
             `;
         }
 
         function mostrarSector() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Sector circular</h2>
                 <img src="01 - Areas figuras planas - imagenes/11.svg" alt="Sector circular">
                 <p>Área = (π · radio² · ángulo) / 360</p>
@@ -141,11 +163,13 @@
                 <p>Ángulo en grados: <input type="text" id="sectorAngulo"></p>
                 <button onclick="areaSector()">Calcular</button>
                 <p class="resultado" id="resultadoSector"></p>
+                </div>
             `;
         }
 
         function mostrarCorona() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Corona circular</h2>
                 <img src="01 - Areas figuras planas - imagenes/12.svg" alt="Corona circular">
                 <p>Área = π · (R² − r²)</p>
@@ -153,28 +177,33 @@
                 <p>Radio interior (r): <input type="text" id="coronar"></p>
                 <button onclick="areaCorona()">Calcular</button>
                 <p class="resultado" id="resultadoCorona"></p>
+                </div>
             `;
         }
 
         function mostrarEquilatero() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Triángulo equilátero</h2>
                 <img src="01 - Areas figuras planas - imagenes/13.svg" alt="Triángulo equilátero">
                 <p>Área = (√3 / 4) · lado²</p>
                 <p>Lado: <input type="text" id="equilateroLado"></p>
                 <button onclick="areaEquilatero()">Calcular</button>
                 <p class="resultado" id="resultadoEquilatero"></p>
+                </div>
             `;
         }
 
         function mostrarHexagono() {
             document.getElementById("contenedor").innerHTML = `
+                <div id="contenedorc">
                 <h2>Hexágono regular</h2>
                 <img src="01 - Areas figuras planas - imagenes/14.svg" alt="Hexágono regular">
                 <p>Área = (3 · √3 / 2) · lado²</p>
                 <p>Lado: <input type="text" id="hexagonoLado"></p>
                 <button onclick="areaHexagono()">Calcular</button>
                 <p class="resultado" id="resultadoHexagono"></p>
+                </div>
             `;
         }
 
